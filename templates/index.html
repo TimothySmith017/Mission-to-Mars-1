@@ -10,22 +10,30 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
   </head>
+  <style>
+      .jumbotron h1 {
+        color: rgb(134, 8, 8);
+      }
+  </style>
   <body>
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        <p><a class="btn btn-danger btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
       <!-- Add section for Mars News -->
       <div class="row" id="mars-news">
         <div class="col-md-12">
           <div class="media">
             <div class="media-body">
-              <h2>Latest Mars News</h2>
-              <h4 class="media-heading">{{ mars.news_title }}</h4>
-              <p>{{ mars.news_paragraph }}</p>
+              <div class="alert alert-danger" role="alert">
+                <h2 class="alert-heading">Latest Mars News</h2>
+                <hr>
+                <h4 class="media-heading">{{ mars.news_title }}</h4>
+                <p>{{ mars.news_paragraph }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -33,7 +41,9 @@
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
-          <h2>Featured Mars Image</h2>
+          <div class="alert alert-warning" role="alert">
+            <h2 class="alert-heading">Featured Mars Image</h2>
+          </div>
           <img
             src="{{mars.featured_image}}"
             class="img-responsive"
@@ -43,49 +53,77 @@
         <div class="col-md-4">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
-            <h4>Mars Facts</h4>
+            <div class="alert alert-warning" role="alert">
+              <h4 class="alert-heading">Mars Facts</h4>
+            </div>
             {{ mars.facts | safe }}
           </div>
         </div>
         <div class="col-md-4">
           <!-- Hemisphere Thumbnails -->
-          <div class="row" id="cerberus_image">
-            <h4>Mars Hemispheres</h4>
-            <div class="thumbnal">
+          <div class="row">
+            <div class="alert alert-warning" role="alert">
+              <h4 class="alert-heading">Mars Hemispheres</h4>
+            </div>
+            <div id="cerberus_image">
               <img
-            src="{{mars.cerberus_image}}"
-            class="img-responsive"
-            alt="cerberus_image"
+              src="{{mars.cerberus_image}}"
+              class="img-thumbnail"
+              alt="cerberus_image"
             />
             </div>
           </div>
-          <div class="row" id="schiaparelli_image">
-            <div class="thumbnal">
+          <div class="row">
+            <div id="schiaparelli_image">
               <img
-            src="{{mars.schiaparelli_image}}"
-            class="img-responsive"
-            alt="schiaparelli_image"
+              src="{{mars.schiaparelli_image}}"
+              class="img-thumbnail"
+              alt="schiaparelli_image"
             />
             </div>
           </div>
-          <div class="row" id="syrtis_major_image">
-            <div class="thumbnal">
+          <div class="row">
+            <div id="syrtis_major_image">
               <img
-            src="{{mars.syrtis_major_image}}"
-            class="img-responsive"
-            alt="syrtis_major_image"
+              src="{{mars.syrtis_major_image}}"
+              class="img-thumbnail"
+              alt="syrtis_major_image"
             />
             </div>
           </div>
-          <div class="row" id="valles_marineris_image">
-            <div class="thumbnal">
+          <div class="row">
+            <div id="valles_marineris_image">
               <img
-            src="{{mars.valles_marineris_image}}"
-            class="img-responsive"
-            alt="valles_marineris_image"
+              src="{{mars.valles_marineris_image}}"
+              class="img-thumbnail"
+              alt="valles_marineris_image"
             />
             </div>
           </div>
+      </div>
+      <div class="col-md-12">
+        <!-- Additional Links -->
+        <div class="row" id="web-links">
+          <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading"> For more information, check out the following links!</h4>
+            <p>Click <a href="https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest" class="alert-link">here</a> for more on Mars NASA News.</p>
+            <p>Interested in Mars space images? Follow <a href="https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars" class="alert-link">this link</a> to view additional featured images.</p>
+            <p>Venture to <a href="https://space-facts.com/mars/" class="alert-link">space-facts</a> and learn more about Mars and other planets in our solar system.</p>
+            <p>Learn more about Mars Hemispheres <a href="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars" class="alert-link">here</a> at the Astropedia Lunar and Planetary Catagraphic Catalog.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <!--Link to My Portfolio -->
+        <div class="row" id="portfolio-link">
+          <div class="alert alert-warning alert-dismissible" role="alert">
+            <p> <strong>Click the "x" to view more of my projects and portfolio.</strong>
+              <a href="https://github.com/shayna-UT/portfolio" class="close" data-dismiss="alert" aria-label="close">
+                &times;
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
