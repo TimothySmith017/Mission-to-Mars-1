@@ -1,6 +1,7 @@
 practice.ipynb
 practice.py
 chromedriver.exe
+scrape_thumbnail.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
